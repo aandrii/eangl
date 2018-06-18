@@ -1,11 +1,17 @@
 $main-color : tomato;
 body {
-    font-size: 21px;
+    font-size: 31px;
     padding: 0;
     margin: 0; 
     background-color: $main-color;
     display: flex;
     justify-content: center;
     align-items:center;
+}
+button {
+    font-size: 30px;
+}
+input {
+    font-size: 30px;
 }
 

@@ -20,7 +20,8 @@ const webpack = require('webpack');
     devServer: {
         contentBase: path.join(__dirname, "dist"),
         compress: true,
-        hot: true
+        hot: true,
+        historyApiFallback: true
     },
     
     module: {
