@@ -33,15 +33,15 @@ class Router extends React.Component {
         
     }
 
-    addFolder = (name) => {
+    addCource = (name) => {
         const newNote = {
             name: name,
             folder: [],
             id: Date.now()
-        };
+        };       
         this.setState({
             dictionary: [...this.state.dictionary, newNote]
-        });    
+        });
     }
 
     deleteFolder = (url, id) => {
@@ -54,6 +54,18 @@ class Router extends React.Component {
 
     }
 
+    addLesson = (name) => {
+        const newNote = {
+            name: name,
+            folder: [],
+            id: Date.now()
+        };       
+        this.setState({
+            dictionary: [...this.state.dictionary, newNote]
+        });
+    }
+
+
     render () {
         if (this.state === null) {
             return (<h1>Loading Database!! {this.hand()}</h1>);
@@ -61,8 +73,16 @@ class Router extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/" render={(props)=> <App stat={this.state.dictionary} {...props}/>} />
-                    {/* <Route exact path="/" component={ App } /> */}
+                    <Route 
+                        exact 
+                        path="/" 
+                        render={(props)=> 
+                            <App 
+                                stat={this.state.dictionary} 
+                                {...props} 
+                                addFolder={this.addCource}
+                            />
+                        } />                   
                     <Route exact path="/:par"  render={(props)=> <Lessons stat={this.state.dictionary} {...props}/>} /> 
                     <Route path="/:par/:lesson"  render={(props)=> <Lesson stat={this.state.dictionary} {...props} />} /> 
                 </Switch>

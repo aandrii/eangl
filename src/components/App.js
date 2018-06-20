@@ -7,26 +7,36 @@ import base from "../base";
 class App extends Component {
   nameRef = React.createRef();
 
-  courceDelete = (id) => {
-    this.setState({
-      dictionary: this.state.dictionary.filter(note => note.id !== id)
-    });   
+  handleClick = () => {
+    const name = this.nameRef.current.value;    
+    this.props.addFolder(name);
+    this.nameRef.current.value = '';
   }
 
-  courceAdd = () => {
-    const newNote = {
-      name: this.nameRef.current.value,
-      folder: [],
-      id: Date.now()
-    };    
-    this.setState({
-      dictionary: [...this.state.dictionary, newNote]
+  addUser=()=>{
+    var immediatelyAvailableReference = base.push('dictionary', {
+      data: {name: 'cccc', type: 'xxx'},
+      then(err){
+        if(!err){
+          console.log('addUser')
+        }
+      }
     });
-    this.nameRef.current.value = '';
-    } 
-  
-   
+    //available immediately, you don't have to wait for the callback to be called
+    var generatedKey = immediatelyAvailableReference.key;
+  }
 
+  authHandler = async () => {
+    // 1 .Look up the current store in the firebase database
+    const store = await base.fetch('dictionary', { context: this });
+    console.log('authHandler');
+     console.log('store', store);
+     const k = Object.keys(store);
+     console.log('k', k)
+  };
+componentDidMount() {
+  this.authHandler;
+}
   render() {
 
     return (
@@ -42,11 +52,14 @@ class App extends Component {
             index={e.key}
             name={e.name}
             folder={e.folder}
-            courceDelete={this.courceDelete}
+            //addFolder={this.courceDelete}
           />)
         }
         <input type="text" ref={this.nameRef}/>
         <button onClick={this.handleClick}>Click</button>
+        <button onClick={this.addUser}>Click re-base</button>
+        <button onClick={this.authHandler}>authHandler</button>
+        
       </div>
     );
   }
