@@ -7,6 +7,8 @@ import Lessons from './Lessons';
 import Lesson from './Lesson';
 import Toolbar from './Toolbar';
 
+import word from '../sampleWord';
+
 class Router extends React.Component {
    componentWillMount() {
         this.ref = base.syncState(`dictionary`, {
@@ -14,7 +16,9 @@ class Router extends React.Component {
             asArray: true,
             state: "dictionary"
         });  
-        console.log('Database is conecting');              
+        console.log('Database is conecting'); 
+        this.setState({dictionary: word}) 
+
     }
 
     componentWillUnmount() {
