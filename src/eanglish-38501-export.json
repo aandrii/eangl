@@ -1,0 +1,119 @@
+{
+  "dictionary" : [ {
+    "folder" : [ {
+      "folder" : [ {
+        "complete" : false,
+        "id" : "0928",
+        "translate" : "привет",
+        "word" : "hello"
+      }, {
+        "complete" : false,
+        "id" : "0998",
+        "translate" : "высокомерный",
+        "word" : "aroogant"
+      } ],
+      "id" : "0938",
+      "name" : "Lesson 1"
+    }, {
+      "folder" : [ {
+        "complete" : false,
+        "id" : "091238",
+        "translate" : "основной",
+        "word" : "main"
+      }, {
+        "complete" : false,
+        "id" : "098978",
+        "translate" : "костюмы",
+        "word" : "suits"
+      } ],
+      "id" : "0983567",
+      "name" : "Lesson 2"
+    }, {
+      "folder" : [ {
+        "complete" : false,
+        "id" : "09918",
+        "translate" : "мошенники",
+        "word" : "imposters"
+      }, {
+        "complete" : false,
+        "id" : "01198",
+        "translate" : "записи",
+        "word" : "entries"
+      } ],
+      "id" : "023498",
+      "name" : "Lesson 3"
+    } ],
+    "id" : "098",
+    "key" : "0",
+    "name" : "Git Udacity"
+  }, {
+    "folder" : {
+      "0" : {
+        "folder" : [ {
+          "complete" : false,
+          "id" : "0982290",
+          "translate" : "Merphy привет",
+          "word" : "Merphy hello"
+        }, {
+          "complete" : false,
+          "id" : "0982345",
+          "translate" : "Merphy высокомерный",
+          "word" : "Merphy aroogant"
+        } ],
+        "id" : "0981167",
+        "name" : "Merphy Lesson 1"
+      },
+      "1" : {
+        "folder" : [ {
+          "complete" : false,
+          "id" : "02345324598",
+          "translate" : "Merphy основной",
+          "word" : "Merphy main"
+        }, {
+          "complete" : false,
+          "id" : "023598",
+          "translate" : "Merphy костюмы",
+          "word" : "Merphy suits"
+        } ],
+        "id" : "098234578",
+        "name" : "Merphy Lesson 2"
+      },
+      "2" : {
+        "folder" : [ {
+          "complete" : false,
+          "id" : "0989932",
+          "translate" : "Merphy мошенники",
+          "word" : "Merphy imposters"
+        }, {
+          "complete" : false,
+          "id" : "0112898",
+          "translate" : "Merphy записи",
+          "word" : "Merphy entries"
+        } ],
+        "id" : "0932458",
+        "name" : "Merphy Lesson 3"
+      },
+      "-LFSuXsO1LJW24I7ZMVg" : {
+        "id" : "name",
+        "name" : "name",
+        "type" : "name"
+      },
+      "-LFSvUumJysV2s2XMHTB" : {
+        "id" : "ccc",
+        "name" : "xxx",
+        "type" : "ccc"
+      },
+      "-LFSw1IPm2rRKznIkQy5" : {
+        "id" : "bbb",
+        "name" : "bbbb",
+        "type" : "bbbb"
+      }
+    },
+    "id" : "09328",
+    "key" : "1",
+    "name" : "Merphy"
+  }, {
+    "id" : 1529510096818,
+    "name" : "23"
+  } ]
+}

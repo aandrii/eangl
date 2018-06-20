@@ -8,13 +8,16 @@ import Lesson from './Lesson';
 import Toolbar from './Toolbar';
 
 class Router extends React.Component {
+    
+
    componentWillMount() {
+      
         this.ref = base.syncState(`dictionary`, {
-            context: this,
-            asArray: true,
+            context: this,           
             state: "dictionary"
         });  
-        console.log('Database is conecting');              
+        console.log('Database is conecting');
+        this.hand();              
     }
 
     componentWillUnmount() {
@@ -22,15 +25,17 @@ class Router extends React.Component {
         //console.log('Lessons componentWillUnmount')
     }
 
-    hand = hanDate => {
-        const store = base.fetch('dictionary', { 
+    hand = async () => {
+        const store = await base.fetch('dictionary', { 
             context: this, 
             asArray: true,
-           /*  then(data) {
-                //console.log('data',data)
-            }  */
+            then(data) {
+                console.log('data',data);
+                this.setState({dass: data});
+                console.log('dass is conecting');
+            } 
         });
-        
+        console.log('store',store)
     }
 
     addCource = (name) => {
@@ -68,12 +73,13 @@ class Router extends React.Component {
 
     render () {
         if (this.state === null) {
-            return (<h1>Loading Database!! {this.hand()}</h1>);
+            return (<h1>Loading Database!! {/* this.hand() */}</h1>);
         }
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route 
+                    <Route path="/" render={ () => {<h1>Wold</h1>}}/>
+                    {/* <Route 
                         exact 
                         path="/" 
                         render={(props)=> 
@@ -82,7 +88,7 @@ class Router extends React.Component {
                                 {...props} 
                                 addFolder={this.addCource}
                             />
-                        } />                   
+                        } />    */}                
                     <Route exact path="/:par"  render={(props)=> <Lessons stat={this.state.dictionary} {...props}/>} /> 
                     <Route path="/:par/:lesson"  render={(props)=> <Lesson stat={this.state.dictionary} {...props} />} /> 
                 </Switch>

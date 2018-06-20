@@ -14,28 +14,20 @@ class App extends Component {
   }
 
   addUser=()=>{
-    var immediatelyAvailableReference = base.push('dictionary', {
-      data: {name: 'cccc', type: 'xxx'},
-      then(err){
-        if(!err){
-          console.log('addUser')
-        }
-      }
-    });
-    //available immediately, you don't have to wait for the callback to be called
-    var generatedKey = immediatelyAvailableReference.key;
+    base.push('dictionary/folder', { data: {name: 'bbbb', type: 'bbbb', id: 'bbb'}})     
   }
+
 
   authHandler = async () => {
     // 1 .Look up the current store in the firebase database
     const store = await base.fetch('dictionary', { context: this });
     console.log('authHandler');
-     console.log('store', store);
-     const k = Object.keys(store);
-     console.log('k', k)
+    console.log('stores', store);
+    const k = Object.keys(store);
+    console.log('k', k)
   };
 componentDidMount() {
-  this.authHandler;
+  this.authHandler;  
 }
   render() {
 
@@ -45,7 +37,8 @@ componentDidMount() {
           <h1 className="App-title">I m going to write my site</h1>
         </header>
         {
-          this.props.stat.map((e) =>
+
+         /*  this.props.stat.map((e) =>
           <MainList
             key={e.id}
             id={e.id}
@@ -53,7 +46,8 @@ componentDidMount() {
             name={e.name}
             folder={e.folder}
             //addFolder={this.courceDelete}
-          />)
+          />) */
+
         }
         <input type="text" ref={this.nameRef}/>
         <button onClick={this.handleClick}>Click</button>
