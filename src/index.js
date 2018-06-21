@@ -1,10 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
 import './style/style.scss'
-import Router from './components/Router';
+import App from './components/App';
 
 render(
-    <Router/>,
+    <App/>,
     document.querySelector('#app')
 );
 
