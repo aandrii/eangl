@@ -39,8 +39,7 @@ class App extends Component {
         item.key = childSnapshot.key;
 
         returnArr.push(item);
-    });
-    console.log('returnArr',returnArr);
+    });    
     this.setState({returnArr})
     return returnArr;
 };
@@ -62,7 +61,23 @@ class App extends Component {
   handleDelete = id => {
     console.log(id);
     resf.ref(`users`).child(id).remove();
+
     //this.db.child(noteId).remove();
+  }
+  handleUpdate = (id, name) => {
+    resf.ref(`users`).child(id).update({ name: name})
+    //this.handleUpdate( '-LFaSfGU0bWdhqrmZc1L' ,'mmmm')
+  }
+  childSearch = () => {
+    const x = resf.ref(`users`).child;
+    //.child();
+    console.log('x', x);
+    
+    // var usersRef = firebase.database().ref('users');
+    // var adaRef = usersRef.child('ada');
+    //orderByValue();
+    // orderByKey()
+    // orderByChild()
   }
   
   render() {
@@ -87,7 +102,8 @@ class App extends Component {
           })
         }
         <input type="text" ref={this.nameRef}/>
-        <button onClick={this.handleClick}>add Course</button>        
+        <button onClick={this.handleClick}>add Course</button> 
+        <button onClick={this.childSearch}>childSearch</button>       
       </div>
     );
   }
